@@ -48,7 +48,7 @@ jobs:
           node scripts/verify-all.mjs --changed="$base" --lane=light --jobs=4
 
   deploy-server:
-    if: github.ref == 'refs/heads/master' && needs.verify.result == 'success'
+    if: github.repository == 'hieu-lee/slay-the-spire-the-boardgame-the-game' && github.ref == 'refs/heads/master' && needs.verify.result == 'success'
     needs: verify
     permissions:
       contents: read
